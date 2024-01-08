@@ -1,8 +1,9 @@
-// SignupForm.js
 import React, { useState } from 'react';
 
 const SignupForm = () => {
   const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
     username: '',
     email: '',
     password: '',
@@ -23,6 +24,18 @@ const SignupForm = () => {
       <div className="card">
         <h2>Create an Account</h2>
         <form onSubmit={handleSubmit}>
+        <label>
+            First Name:
+            <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} />
+          </label>
+          <br />
+          <br />
+          <label>
+            Last Name:
+            <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} />
+          </label>
+          <br />
+          <br />
           <label>
             Username:
             <input type="text" name="username" value={formData.username} onChange={handleChange} />
@@ -37,6 +50,12 @@ const SignupForm = () => {
           <br />
           <label>
             Password:
+            <input type="password" name="password" value={formData.password} onChange={handleChange} />
+          </label>
+          <br />
+          <br />
+          <label>
+            Re-Enter Password:
             <input type="password" name="password" value={formData.password} onChange={handleChange} />
           </label>
           <br />

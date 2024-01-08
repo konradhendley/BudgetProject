@@ -4,7 +4,7 @@ import React from 'react';
 const Header = () => {
   return (
     <header>
-      <h1>Fiscus</h1>
+      <h1>Folio</h1>
     </header>
   );
 };
