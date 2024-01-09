@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const SignupForm = () => {
   const [formData, setFormData] = useState({
@@ -16,7 +17,22 @@ const SignupForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle signup logic, e.g., make an API call
+  
+    try {
+      const response = await axios.post('YOUR_API_ENDPOINT', {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        username: formData.username,
+        email: formData.email,
+        password: formData.password,
+      });
+  
+      console.log(response.data); // Log the response data
+      // Optionally, you can redirect the user or perform other actions after a successful signup
+    } catch (error) {
+      console.error('Error during POST request:', error);
+      // Handle error: you can show an error message to the user or perform other actions
+    }
   };
 
   return (
@@ -50,12 +66,6 @@ const SignupForm = () => {
           <br />
           <label>
             Password:
-            <input type="password" name="password" value={formData.password} onChange={handleChange} />
-          </label>
-          <br />
-          <br />
-          <label>
-            Re-Enter Password:
             <input type="password" name="password" value={formData.password} onChange={handleChange} />
           </label>
           <br />
