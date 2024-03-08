@@ -24,23 +24,25 @@ const Navbar = () => {
         <ul>
           {!token && (
             <li>
-              <Link to="/login"><button>Login</button></Link>
+              <Link to="/login"><button className="navbar-button">Login</button></Link>
             </li>
           )}
           {!token && (
             <li>
-              <Link to="/signup"><button>Signup</button></Link>
+              <Link to="/signup"><button className="navbar-button">Signup</button></Link>
             </li>
           )}
-          {token && (
-            <>
-              <li>
-                <Link to="/myAccount"><button>Account</button></Link>
-              </li>
-              <li>
-                <button onClick={handleLogout}>Logout</button>
-              </li>
-            </>
+          { token && (
+            <div className="nav-item dropdown">
+            <button className="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Account
+            </button>
+            <ul className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <li><Link to="/myAccount" className="dropdown-item">My Account</Link></li>
+              <li><Link to="/myInfo" className="dropdown-item">My Info</Link></li>
+              <li><a href="/" className="dropdown-item" onClick={handleLogout}> Log Out</a></li>
+            </ul>
+          </div>
           )}
         </ul>
       </div>

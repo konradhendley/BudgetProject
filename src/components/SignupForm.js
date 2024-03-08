@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { useAuth } from './AuthContext';
+//import { useAuth } from './AuthContext';
 import Footer from './Footer';
 
 const SignupForm = () => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
-    username: '',
     email: '',
     password: '',
   });
 
   const navigate = useNavigate();
-  const { login } = useAuth();
+  //const { login } = useAuth();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,19 +23,15 @@ const SignupForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://127.0.0.1:5000/login', {
+        await axios.post('http://127.0.0.1:8000/users', {
         firstName: formData.firstName,
         lastName: formData.lastName,
-        username: formData.username,
         email: formData.email,
         password: formData.password,
       });
 
-      const access_token = response.data.token; 
-      login(access_token);
-
   // Redirect to "myAccount"
-  navigate('/myAccount');
+  navigate('/login');
   
     } catch (error) {
       console.error('Error during POST request:', error);
@@ -59,12 +54,6 @@ const SignupForm = () => {
             <label>
               Last Name:
               <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} />
-            </label>
-            <br />
-            <br />
-            <label>
-              Username:
-              <input type="text" name="username" value={formData.username} onChange={handleChange} />
             </label>
             <br />
             <br />

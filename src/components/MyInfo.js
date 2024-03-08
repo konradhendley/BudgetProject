@@ -1,6 +1,8 @@
 // MyInfo.js
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from './AuthContext';
+import { jwtDecode } from 'jwt-decode';
 import Footer from './Footer';
 
 const MyInfo = () => {
@@ -26,8 +28,9 @@ const MyInfo = () => {
                 <h6>Email</h6>
                 <p> {email} </p>
                 <br/>
-                <h6>First Name</h6>
-                <p> {firstName} </p>
+                <div className = 'button-container'>
+                <Link to="/updateUser"> <button>Update</button> </Link>
+                </div>
             </div>
         </div>
         

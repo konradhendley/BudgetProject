@@ -46,14 +46,23 @@ nav {
   align-items: center;
 }
 
-nav button {
+button {
   background: linear-gradient(to bottom right, #4CAF50, #2196F3);
   padding: 10px 10px;
   border: 1px solid rgb(81, 81, 81);
   border-radius:10px;
   color: white;
   font-size: 16px;
-
+}
+.navbar-button {
+  background: linear-gradient(to bottom right, #4CAF50, #2196F3);
+  padding: 10px 10px;
+  border: 1px solid rgb(81, 81, 81);
+  border-radius:10px;
+  color: white;
+  font-size: 14px;
+  height: 41px;
+  text-align: center;
 }
 
 nav h1 {
@@ -152,12 +161,6 @@ a:hover {
   background: linear-gradient(to bottom right, #4CAF50, #2196F3);
 }
 
-.home-container button:hover{
-  box-shadow: 0 30px 66px rgba(0, 0, 0, 0.2);
-}
-
-
-
 .home-card{
   width: 500px;
   height: 350px;
@@ -166,7 +169,7 @@ a:hover {
   border: 1px solid rgb(81, 81, 81);
   border-radius: 8px;
   box-shadow: 0 25px 40px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(to bottom, rgb(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  background: rgba(0, 0, 0, 0.9);
   color: white;
   max-height: 475px;
   overflow: auto;
@@ -181,10 +184,9 @@ a:hover {
   border: 1px solid rgb(81, 81, 81);
   border-radius: 8px;
   box-shadow: 0 25px 40px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(to bottom, rgb(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  background: rgba(0, 0, 0, 0.9);
   color: white;
   max-height: 475px;
-  
 }
 
 .login-card h2 {
@@ -199,7 +201,7 @@ a:hover {
   border: 1px solid rgb(81, 81, 81);
   border-radius: 8px;
   box-shadow: 0 25px 40px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(to bottom, rgb(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  background: rgba(0, 0, 0, 0.9);
   color: white;
   max-height: fit-content;
   
@@ -217,7 +219,7 @@ a:hover {
   border: 1px solid rgb(81, 81, 81);
   border-radius: 8px;
   box-shadow: 0 25px 40px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(to bottom, rgb(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  background: rgba(0, 0, 0, 0.9);
   color: white;
   max-height: 475px;
   overflow: auto;
@@ -267,109 +269,36 @@ label {
 }
 
 input {
-  width: 100%; /* Make input fields take up the full width of the container */
-  padding: 8px;
-  border-radius: 8px; /* Add some padding for better appearance */
-  margin-bottom: 15px; /* Add space between input fields */
-}
-
-/* Make all images in the carousel the same size */
-.carousel img {
   width: 100%;
-  height: auto;
-}
-
-/* Set the color of text fields to black */
-.carousel h3,
-.carousel p {
-  color: white;
-  text-align: center;
-}
-
-.carousel-container {
-  width: 80%; /* Adjust the width as needed */
-  margin: 0 auto; /* Center the carousel horizontally */
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  background-color: transparent; /* Make the input field transparent */
+  color: white; /* Set the text color to white */
+  border: 1px solid white; /* Optionally, set border color */
 }
 
 /* Style the carousel caption */
 .carousel-caption {
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-  color: white; /* White text color */
-  padding: 10px; /* Add padding around the caption */
-  border-radius: 5px; /* Add some border radius for rounded corners */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white; 
+  padding: 10px; 
+  border-radius: 5px;
 }
 
-/* Style the carousel indicators */
-.carousel-indicators {
- display: none;
+.carousel-control-next, .carousel-control-prev { 
+  bottom: 26rem;
+ }
+
+.dropdown-menu{
+  background-color: black;
+  
 }
 
-/* Style the active carousel indicator */
-.carousel-indicators .active {
-  background-color: #000; /* Active indicator color */
+.dropdown-menu .dropdown-item{
+  color: white;
 }
-.carousel-control-prev,
-.carousel-control-next {
-  width: auto; /* Reset the width */
-  text-indent: -9999px; /* Move the text off-screen */
-  background-color: transparent; /* Set background color to transparent */
-  border: none; /* Remove any borders */
-  font-size: 0; /* Set font size to 0 to hide text */
-}
-
-/* Set the size of the arrows */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  width: 40px; /* Adjust the width as needed */
-  height: 40px; /* Adjust the height as needed */
-}
-
-/* Style the arrows */
-.carousel-control-prev-icon::before,
-.carousel-control-next-icon::before {
-  content: ''; /* Remove the default content */
-  display: inline-block; /* Make it an inline block */
-  border-top: 8px solid transparent; /* Create the arrow shape */
-  border-bottom: 8px solid transparent; /* Create the arrow shape */
-}
-
-/* Style the previous arrow */
-.carousel-control-prev-icon::before {
-  border-right: 8px solid black; /* Set the color and size of the arrow */
-}
-
-/* Style the next arrow */
-.carousel-control-next-icon::before {
-  border-left: 8px solid black; /* Set the color and size of the arrow */
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-  top: 50%; /* Position vertically centered */
-  transform: translateY(-50%); /* Adjust for vertical positioning */
-}
-
-/* Adjust the size of the arrows */
-.carousel-control-prev,
-.carousel-control-next {
-  width: 5%; /* Adjust the width as needed */
-}
-
-/* Style the arrows */
-.carousel-control-prev-icon::before,
-.carousel-control-next-icon::before {
-  content: ''; /* Remove the default content */
-  display: inline-block; /* Make it an inline block */
-  border-top: 8px solid transparent; /* Create the arrow shape */
-  border-bottom: 8px solid transparent; /* Create the arrow shape */
-}
-
-/* Style the previous arrow */
-.carousel-control-prev-icon::before {
-  border-right: 8px solid black; /* Set the color and size of the arrow */
-}
-
-/* Style the next arrow */
-.carousel-control-next-icon::before {
-  border-left: 8px solid black; /* Set the color and size of the arrow */
+.dropdown-menu .dropdown-item:hover {
+  background-color: rgba(133, 247, 137, 0.892);
+  color: black;
 }
