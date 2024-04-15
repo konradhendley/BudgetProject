@@ -39,24 +39,20 @@ const LoginForm = () => {
   };
 
   return (
-    <div className = 'content-container'>
-      <div  className = "home-container">
-        <div className="login-card">
+    <div className='wrapper'>
+      <div  className = "content-container">
+        <div className="card">
         <h2>Login</h2>
-          <form onSubmit={handleSubmit}>
+          <form className='login-form' onSubmit={handleSubmit}>
             <label>
-              Email:
-              <input type="email" name="email" value={formData.email} onChange={handleChange} />
+              <h6>Email:</h6>
+              <input className = "input-field" type="email" name="email" value={formData.email} onChange={handleChange} />
             </label>
-            <br />
-            <br />
-            <br />
+            <br/>
             <label>
-              Password:
-              <input type="password" name="password" value={formData.password} onChange={handleChange} />
+            <h6>Password:</h6>
+              <input className = "input-field" type="password" name="password" value={formData.password} onChange={handleChange} />
             </label>
-            <br />
-            <br />
             <div className = 'button-container'>
             <button type="submit">Log In</button>
             </div>

@@ -35,37 +35,37 @@ const SignupForm = () => {
   
     } catch (error) {
       console.error('Error during POST request:', error);
-      // Handle error: you can show an error message to the user or perform other actions
+     
     }
   };
 
   return (
-    <div className = 'content-container'>
-      <div  className = "home-container">
-        <div className="signup-card">
+    <div className='wrapper'>
+      <div  className = "content-container">
+        <div className="card">
           <h2>Create an Account</h2>
           <form onSubmit={handleSubmit}>
           <label>
               First Name:
-              <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} />
+              <input className = "input-field" type="text" name="firstName" value={formData.firstName} onChange={handleChange} />
             </label>
             <br />
             <br />
             <label>
               Last Name:
-              <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} />
+              <input className = "input-field" type="text" name="lastName" value={formData.lastName} onChange={handleChange} />
             </label>
             <br />
             <br />
             <label>
               Email:
-              <input type="email" name="email" value={formData.email} onChange={handleChange} />
+              <input className = "input-field" type="email" name="email" value={formData.email} onChange={handleChange} />
             </label>
             <br />
             <br />
             <label>
               Password:
-              <input type="password" name="password" value={formData.password} onChange={handleChange} />
+              <input className = "input-field" type="password" name="password" value={formData.password} onChange={handleChange} />
             </label>
             <br />
             <br />

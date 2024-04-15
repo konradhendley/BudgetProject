@@ -35,6 +35,10 @@ const UpdateUser = () => {
         firstName: formData.firstName,
         lastName: formData.lastName,
         email: formData.email,
+      }, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
       });
 
       // Redirect to "myAccount"
@@ -47,8 +51,8 @@ const UpdateUser = () => {
   };
 
   return (
-    <div className="content-container">
-      <div className='home-container'>
+    <div>
+      <div className='content-container'>
         <div className='centered-card'>
           <div className="info-card">
             <form onSubmit={handleSubmit}>
